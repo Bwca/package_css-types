@@ -1,4 +1,4 @@
-import { findFilesRecursivelyByExtension } from './find-files-recursively-by-extension';
+import { findFilesRecursivelyByExtension } from './find-files-recursively-by-extension/find-files-recursively-by-extension';
 import { generateScssTypesForFile } from './generate-types-for-file';
 import { NotificationService } from './notification-service';
 

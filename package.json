@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --module ESNext",
     "lint": "tslint -c tslint.json  -p tsconfig.json",
     "test": "mocha -r ts-node/register src/**/*.test.ts"
   },

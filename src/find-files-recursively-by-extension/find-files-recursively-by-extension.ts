@@ -13,9 +13,8 @@ export function findFilesRecursivelyByExtension(dir: string, extension = /scss$/
         if (extension.test(potentialFile)) {
           return [...files, join(dir, potentialFile)];
         }
-        return null;
       })
       .filter(Boolean)
-      .reduce((a, b) => [...a, ...b], []) || []
+      .reduce((a, b) => [...(a as string[]), ...(b as string[])], []) || []
   );
 }

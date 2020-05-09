@@ -1,7 +1,7 @@
 import { renderSync } from 'sass';
 
 import { EnumGenerator } from './enum-generator/enum-generator';
-import { generateDefinitionsFileName } from './generate-definitions-file-name';
+import { generateDefinitionsFileName } from './generate-definitions-file-name/generate-definitions-file-name';
 import { getCompiledCssClasses } from './get-compiled-classes';
 import { NotificationService } from './notification-service';
 import { writeCssTypesEnumToFile } from './write-enum-to-file';
