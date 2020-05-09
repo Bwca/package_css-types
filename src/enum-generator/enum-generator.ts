@@ -6,7 +6,8 @@ export class EnumGenerator {
   public static generateEnumNameFromPath(path: string): string {
     const fileName = path.match(/([^\/\\]*)\.scss$/);
     const enumName = (fileName && fileName[1]) || 'styles';
-    return EnumGenerator.generateCamelCaseName(enumName);
+    const camelCasedName = EnumGenerator.generateCamelCaseName(enumName);
+    return camelCasedName.charAt(0).toUpperCase() + camelCasedName.slice(1);
   }
 
   public static generateEnumBody(cssClasses: string[]): string {
@@ -22,7 +23,7 @@ export class EnumGenerator {
     return enumBody;
   }
 
-  public static generateCamelCaseName(str: string): string {
+  private static generateCamelCaseName(str: string): string {
     if (!/[-_]/g.test(str)) {
       return str.replace(/^\../, ([, firstLetter]) => firstLetter.toUpperCase());
     }

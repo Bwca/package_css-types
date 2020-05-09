@@ -1,6 +1,6 @@
 import { renderSync } from 'sass';
 
-import { EnumGenerator } from './enum-generator';
+import { EnumGenerator } from './enum-generator/enum-generator';
 import { findFilesRecursivelyByExtension } from './find-files-recursively-by-extension';
 import { generateDefinitionsFileName } from './generate-definitions-file-name';
 import { getCompiledCssClasses } from './get-compiled-classes';
