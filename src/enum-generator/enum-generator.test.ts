@@ -82,3 +82,20 @@ describe(`${EnumGenerator.name} tests for enum body generation`, () => {
     expect(enumBody).toMatchSnapshot();
   });
 });
+
+describe(`${EnumGenerator.name} tests for complete enum string`, () => {
+  it('should generate a valid ts enum', () => {
+    // Arrange
+    const filePath = '/home/user/folder/project/src/style.scss';
+    const cssClasses = ['.class-one', '.class--two', '.class_three', '.class__four', '.class__five--item'];
+
+    // Act
+    const enumName = EnumGenerator.generateEnumNameFromPath(filePath);
+    const enumBody = EnumGenerator.generateEnumBody(cssClasses);
+    const enumString = EnumGenerator.combineEnumNameAndBodyToString(enumName, enumBody);
+
+    // Assert
+    expect(enumString).toBeDefined();
+    expect(enumString).toMatchSnapshot();
+  });
+});

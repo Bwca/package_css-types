@@ -20,9 +20,7 @@ export async function generateCssTypesFile(filePath: string): Promise<void> {
     return;
   }
 
-  const enumName: string = EnumGenerator.generateEnumNameFromPath(filePath);
-  const enumBody = EnumGenerator.generateEnumBody(cssClasses);
-  const enumDefinition = EnumGenerator.generateEnumStringForWritingToFile(enumName, enumBody);
+  const enumDefinition = EnumGenerator.generateEnumString(filePath, cssClasses);
 
   const definitionsFileName = generateDefinitionsFileName(filePath);
 

@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`EnumGenerator tests for complete enum string should generate a valid ts enum 1`] = `
+"export enum Style {
+  ClassOne = 'class-one',
+  ClassTwo = 'class--two',
+  ClassThree = 'class_three',
+  ClassFour = 'class__four',
+  ClassFiveItem = 'class__five--item',
+}
+"
+`;
+
 exports[`EnumGenerator tests for enum body generation should generate a string containing enum body with proper keys and values 1`] = `
 "{
   ClassOne = 'class-one',

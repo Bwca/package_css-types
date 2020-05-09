@@ -1,5 +1,11 @@
 export class EnumGenerator {
-  public static generateEnumStringForWritingToFile(enumName: string, enumBody: string): string {
+  public static generateEnumString(filePath: string, cssClasses: string[]): string {
+    const enumName: string = EnumGenerator.generateEnumNameFromPath(filePath);
+    const enumBody = EnumGenerator.generateEnumBody(cssClasses);
+    return EnumGenerator.combineEnumNameAndBodyToString(enumName, enumBody);
+  }
+
+  public static combineEnumNameAndBodyToString(enumName: string, enumBody: string): string {
     return `export enum ${enumName} ${enumBody}`;
   }
 
