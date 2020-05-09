@@ -13,7 +13,8 @@
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true
   },
   "include": ["src/**/*"],
   "exclude": ["src/**/*.spec.ts"]

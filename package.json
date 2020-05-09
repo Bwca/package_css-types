@@ -2,12 +2,13 @@
   "name": "sass-typing",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "build": "tsc",
     "lint": "tslint -c tslint.json  -p tsconfig.json",
     "test": "mocha -r ts-node/register src/**/*.test.ts"
   },
+  "bin": "dist/cli.js",
   "keywords": [],
   "author": "",
   "license": "ISC",

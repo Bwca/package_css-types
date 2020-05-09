@@ -1,28 +1,23 @@
-import { renderSync } from 'sass';
-
-import { EnumGenerator } from './enum-generator/enum-generator';
 import { findFilesRecursivelyByExtension } from './find-files-recursively-by-extension';
-import { generateDefinitionsFileName } from './generate-definitions-file-name';
-import { getCompiledCssClasses } from './get-compiled-classes';
-import { writeCssTypesEnumToFile } from './write-enum-to-file';
+import { generateScssTypesForFile } from './generate-types-for-file';
+import { NotificationService } from './notification-service';
 
-function generateScssTypesForFile(filePath: string) {
-  const scssRenderResult = renderSync({
-    file: filePath,
-  });
+export function createTypesFromScss(path = __dirname): void {
+  NotificationService.info('Attempting to create *.scss type files...');
 
-  const cssClasses = getCompiledCssClasses(scssRenderResult);
-  if (!cssClasses) {
-    throw new Error('WTF DUDE');
+  let scssFilePaths: string[];
+
+  try {
+    scssFilePaths = findFilesRecursivelyByExtension(path);
+  } catch (e) {
+    NotificationService.error('Error while walking directories: could not fetch a list of *.scss files!');
+    return;
   }
 
-  const enumName: string = EnumGenerator.generateEnumNameFromPath(filePath);
-  const enumBody = EnumGenerator.generateEnumBody(cssClasses);
-  const enumDefinition = EnumGenerator.generateEnumStringForWritingToFile(enumName, enumBody);
+  if (!scssFilePaths.length) {
+    NotificationService.warning('Could not find any *.scss files, please make sure you have provided a correct directory path.');
+  }
 
-  const definitionsFileName = generateDefinitionsFileName(filePath);
-  writeCssTypesEnumToFile(definitionsFileName, enumDefinition);
+  scssFilePaths.forEach((i) => generateScssTypesForFile(i));
+  NotificationService.info('It is done.');
 }
-
-const scssFiles = findFilesRecursivelyByExtension(__dirname);
-scssFiles.forEach((i) => generateScssTypesForFile(i));

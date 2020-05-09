@@ -1,10 +1,8 @@
-import { Result } from 'sass';
-
-export function getCompiledCssClasses({ css }: Result): string[] | undefined {
+export function getCompiledCssClasses(css: string): string[] | undefined {
   try {
-    const classes: string[] = css.toString().match(/\.[a-z\d\-_]+/gi) as string[];
+    const classes: string[] = css.match(/\.[a-z\d\-_]+/gi) as string[];
     return classes.reduce((a: string[], b) => (a.includes(b) ? a : [...a, b]), []);
   } catch (e) {
-    throw new Error('wtf');
+    return;
   }
 }

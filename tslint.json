@@ -3,6 +3,7 @@
   "extends": ["tslint:recommended"],
   "jsRules": {},
   "rules": {
+    "no-console": false,
     "ordered-imports": [
       true,
       {
