@@ -1,5 +1,3 @@
-import { expect } from 'chai';
-
 import { findFilesRecursivelyByExtension } from './find-files-recursively-by-extension';
 
 describe(`${findFilesRecursivelyByExtension.name} tests directory walker`, () => {
@@ -12,8 +10,7 @@ describe(`${findFilesRecursivelyByExtension.name} tests directory walker`, () =>
     const isEveryExpectedFileFound = expectedScssFiles.every((scss) => files.some((filePath) => filePath.includes(scss)));
 
     // Assert
-    expect(files).to.have.lengthOf(4);
-    // tslint:disable-next-line:no-unused-expression
-    expect(isEveryExpectedFileFound).to.be.true;
+    expect(files).toHaveLength(4);
+    expect(isEveryExpectedFileFound).toBeTruthy();
   });
 });

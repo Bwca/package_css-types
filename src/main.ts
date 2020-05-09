@@ -1,5 +1,5 @@
 import { findFilesRecursivelyByExtension } from './find-files-recursively-by-extension/find-files-recursively-by-extension';
-import { generateScssTypesForFile } from './generate-types-for-file';
+import { generateCssTypesFile } from './generate-types-for-file';
 import { NotificationService } from './notification-service';
 
 export function createTypesFromScss(path = __dirname): void {
@@ -18,6 +18,6 @@ export function createTypesFromScss(path = __dirname): void {
     NotificationService.warning('Could not find any *.scss files, please make sure you have provided a correct directory path.');
   }
 
-  scssFilePaths.forEach((i) => generateScssTypesForFile(i));
+  scssFilePaths.forEach((i) => generateCssTypesFile(i));
   NotificationService.info('It is done.');
 }

@@ -4,7 +4,7 @@ export class EnumGenerator {
   }
 
   public static generateEnumNameFromPath(path: string): string {
-    const fileName = path.match(/([^\/\\]*)\.scss$/);
+    const fileName = path.match(/([^\/\\]*)\.(scss|css)$/);
     const enumName = (fileName && fileName[1]) || 'styles';
     const camelCasedName = EnumGenerator.generateCamelCaseName(enumName);
     return camelCasedName.charAt(0).toUpperCase() + camelCasedName.slice(1);

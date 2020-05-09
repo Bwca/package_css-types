@@ -1,22 +1,19 @@
-import { renderSync } from 'sass';
-
 import { EnumGenerator } from './enum-generator/enum-generator';
+import { extractCssStringFromFile } from './extract-css-string-from-file/extract-css-string-from-file';
 import { generateDefinitionsFileName } from './generate-definitions-file-name/generate-definitions-file-name';
-import { getCompiledCssClasses } from './get-compiled-classes';
+import { getCssClassesAsArray } from './get-compiled-classes/get-compiled-classes';
 import { NotificationService } from './notification-service';
 import { writeCssTypesEnumToFile } from './write-enum-to-file';
 
-export async function generateScssTypesForFile(filePath: string): Promise<void> {
-  const scssRenderResult = renderSync({
-    file: filePath,
-  });
-  const cssString = scssRenderResult.css.toString();
+export async function generateCssTypesFile(filePath: string): Promise<void> {
+  const cssString = await extractCssStringFromFile(filePath);
 
   if (!cssString) {
-    NotificationService.warning(`File ${filePath} contains no css classes after compilation!`);
+    NotificationService.warning(`Could not obtain ${filePath} css classes after compilation!`);
+    return;
   }
 
-  const cssClasses = getCompiledCssClasses(cssString);
+  const cssClasses = getCssClassesAsArray(cssString);
 
   if (!cssClasses) {
     NotificationService.error(`Could not parse css classes from ${filePath}`);

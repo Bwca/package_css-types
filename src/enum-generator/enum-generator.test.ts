@@ -1,9 +1,7 @@
-import { expect } from 'chai';
-
 import { EnumGenerator } from './enum-generator';
 
 describe(`${EnumGenerator.name} tests for enum name generation`, () => {
-  it('should generate enum name from a provided path to a stylesheet', () => {
+  it('should generate enum name from a provided path to a scss stylesheet', () => {
     // Arrange
     const filePath = '/home/user/folder/project/src/style.scss';
     const expectedEnumName = 'Style';
@@ -12,7 +10,19 @@ describe(`${EnumGenerator.name} tests for enum name generation`, () => {
     const enumName = EnumGenerator.generateEnumNameFromPath(filePath);
 
     // Assert
-    expect(enumName).to.be.equal(expectedEnumName);
+    expect(enumName).toEqual(expectedEnumName);
+  });
+
+  it('should generate enum name from a provided path to a css stylesheet', () => {
+    // Arrange
+    const filePath = '/home/user/folder/project/src/style.css';
+    const expectedEnumName = 'Style';
+
+    // Act
+    const enumName = EnumGenerator.generateEnumNameFromPath(filePath);
+
+    // Assert
+    expect(enumName).toEqual(expectedEnumName);
   });
 
   it('should generate enum name from a provided path to a stylesheet when stylesheet file name uses kebab casing', () => {
@@ -24,7 +34,7 @@ describe(`${EnumGenerator.name} tests for enum name generation`, () => {
     const enumName = EnumGenerator.generateEnumNameFromPath(filePath);
 
     // Assert
-    expect(enumName).to.be.equal(expectedEnumName);
+    expect(enumName).toEqual(expectedEnumName);
   });
 
   it('should generate enum name from a provided path to a stylesheet when stylesheet file name uses snake casing', () => {
@@ -36,7 +46,7 @@ describe(`${EnumGenerator.name} tests for enum name generation`, () => {
     const enumName = EnumGenerator.generateEnumNameFromPath(filePath);
 
     // Assert
-    expect(enumName).to.be.equal(expectedEnumName);
+    expect(enumName).toEqual(expectedEnumName);
   });
 
   it('should generate enum name from a provided path to a stylesheet when stylesheet file name uses dots to separate words', () => {
@@ -48,7 +58,7 @@ describe(`${EnumGenerator.name} tests for enum name generation`, () => {
     const enumName = EnumGenerator.generateEnumNameFromPath(filePath);
 
     // Assert
-    expect(enumName).to.be.equal(expectedEnumName);
+    expect(enumName).toEqual(expectedEnumName);
   });
 });
 
@@ -68,7 +78,7 @@ describe(`${EnumGenerator.name} tests for enum body generation`, () => {
     const enumBody = EnumGenerator.generateEnumBody(cssClasses);
 
     // Assert
-    // tslint:disable-next-line:no-unused-expression
-    expect(expectedEnumPairs.every((i) => enumBody.includes(i))).to.be.ok;
+    expect(expectedEnumPairs.every((i) => enumBody.includes(i))).toBeTruthy();
+    expect(enumBody).toMatchSnapshot();
   });
 });

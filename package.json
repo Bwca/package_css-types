@@ -1,12 +1,12 @@
 {
-  "name": "sass-typing",
+  "name": "typed-css",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "build": "tsc --module ESNext",
     "lint": "tslint -c tslint.json  -p tsconfig.json",
-    "test": "mocha -r ts-node/register src/**/*.test.ts"
+    "test": "jest"
   },
   "bin": "dist/cli.js",
   "keywords": [],
@@ -16,14 +16,11 @@
     "sass": "^1.26.5"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.11",
-    "@types/mocha": "^7.0.2",
+    "@types/jest": "^25.2.1",
     "@types/sass": "^1.16.0",
-    "chai": "^4.2.0",
-    "mocha": "^7.1.2",
-    "nyc": "^15.0.1",
+    "jest": "^26.0.1",
     "prettier": "^2.0.5",
-    "ts-node": "^8.10.1",
+    "ts-jest": "^25.5.1",
     "tslint": "^6.1.2",
     "typescript": "^3.8.3"
   }
