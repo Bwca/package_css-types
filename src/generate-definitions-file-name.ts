@@ -1,3 +1,3 @@
-export function generateDefinitionsFileName(path: string): string {
-  return path.replace(/\.scss$/, '.style.ts');
+export function generateDefinitionsFileName(path: string, extension = '.style.ts'): string {
+  return path.replace(/\.scss$/, extension);
 }
