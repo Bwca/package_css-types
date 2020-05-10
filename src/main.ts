@@ -1,23 +1,24 @@
+import { createCssTypesForFile } from './create-css-types-for-file/create-css-types-for-file';
 import { findFilesRecursivelyByExtension } from './find-files-recursively-by-extension/find-files-recursively-by-extension';
-import { generateCssTypesFile } from './generate-types-for-file';
 import { NotificationService } from './notification-service';
 
-export function createTypesFromScss(path = __dirname): void {
-  NotificationService.info('Attempting to create *.scss type files...');
+export function createTypesForStylesheets(path = __dirname): void {
+  NotificationService.info('Attempting to create stylesheet type files...');
 
-  let scssFilePaths: string[];
+  let stylesheetPaths: string[];
 
   try {
-    scssFilePaths = findFilesRecursivelyByExtension(path);
+    stylesheetPaths = findFilesRecursivelyByExtension(path);
   } catch (e) {
-    NotificationService.error('Error while walking directories: could not fetch a list of *.scss files!');
+    NotificationService.error('Error while walking directories: could not fetch a list of stylesheet files!');
     return;
   }
 
-  if (!scssFilePaths.length) {
-    NotificationService.warning('Could not find any *.scss files, please make sure you have provided a correct directory path.');
+  if (!stylesheetPaths.length) {
+    NotificationService.warning('Could not find any stylesheet files, please make sure you have provided a correct directory path.');
   }
 
-  scssFilePaths.forEach((i) => generateCssTypesFile(i));
+  stylesheetPaths.forEach((i) => createCssTypesForFile(i));
+
   NotificationService.info('It is done.');
 }

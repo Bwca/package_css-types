@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createCssTypesForFile test should create types file for a css stylesheet 1`] = `
+"export enum Sheet {
+  One = 'one',
+  Two = 'two',
+  Three = 'three',
+  Four = 'four',
+  Five = 'five',
+}
+"
+`;
+
+exports[`createCssTypesForFile test should create types file for scss stylesheet 1`] = `
+"export enum Sheet {
+  One = 'one',
+  Two = 'two',
+  Three = 'three',
+  Five = 'five',
+  Four = 'four',
+}
+"
+`;

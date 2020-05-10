@@ -1,7 +1,7 @@
 import { readdirSync, statSync } from 'fs';
 import { join } from 'path';
 
-export function findFilesRecursivelyByExtension(dir: string, extension = /scss$/, files: string[] = []): string[] {
+export function findFilesRecursivelyByExtension(dir: string, extension = /(scss|css)$/, files: string[] = []): string[] {
   return (
     readdirSync(dir)
       .map((potentialFile) => {

@@ -1,0 +1,16 @@
+section.one {
+  color: red;
+  .two {
+    color: goldenrod;
+    .three {
+      color: green;
+    }
+  }
+}
+.five {
+  color: blue;
+
+  .four {
+    color: pink;
+  }
+}
