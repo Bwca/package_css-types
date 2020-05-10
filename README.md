@@ -9,27 +9,27 @@ The package provides a convenient way to create a typescript enum for css classe
 Install it from npm using your preferred package manager, i.e.:
 
 ```
-npm install typed-css --save-dev
+npm install css-types --save-dev
 ```
 
 Create a custom script in your package.json file:
 
 ```
 "scripts": {
-    "typed-css": "typed-css"
+    "css-types": "css-types"
 }
 ```
 
 Then run it:
 
 ```
-npm run typed-css
+npm run css-types
 ```
 
-By default `typed-css` looks for the `src` directory and walks it, creating typescript enums for every `*.css` and `*.scss` file it finds. To set a different directory for crawling simply pass its relative path:
+By default `css-types` looks for the `src` directory and walks it, creating typescript enums for every `*.css` and `*.scss` file it finds. To set a different directory for crawling simply pass its relative path:
 
 ```
-npm run typed-css -- src/css
+npm run css-types -- src/css
 ```
 
 ## What does it do
@@ -48,7 +48,7 @@ For example, provided you have a stylesheet `main.css` with the following conten
 }
 ```
 
-Performing `typed-css` command will create `main.style.ts` file with the following enum:
+Performing `css-types` command will create `main.style.ts` file with the following enum:
 
 ```
 export enum Main {

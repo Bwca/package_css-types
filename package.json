@@ -1,5 +1,5 @@
 {
-  "name": "typed-css",
+  "name": "css-types",
   "version": "1.0.0",
   "description": "Package for creating typings for stylesheet files.",
   "main": "main.js",
@@ -26,12 +26,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bwca/typed-css.git"
+    "url": "git+https://github.com/Bwca/css-types.git"
   },
   "bugs": {
-    "url": "https://github.com/Bwca/typed-css/issues"
+    "url": "https://github.com/Bwca/css-types/issues"
   },
-  "homepage": "https://github.com/Bwca/typed-css#readme",
+  "homepage": "https://github.com/Bwca/css-types#readme",
   "dependencies": {
     "sass": "^1.26.5"
   },
