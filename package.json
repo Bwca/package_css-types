@@ -1,17 +1,37 @@
 {
   "name": "typed-css",
   "version": "1.0.0",
-  "description": "",
+  "description": "Package for creating typings for stylesheet files.",
   "main": "main.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsc --module ESNext",
+    "build": "tsc",
     "lint": "tslint -c tslint.json  -p tsconfig.json",
     "test": "jest"
   },
   "bin": "dist/cli.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "css",
+    "scss",
+    "sass",
+    "types",
+    "typescript"
+  ],
+  "author": {
+    "name": "Volodymyr Yepishev",
+    "email": "yepishevv@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bwca/typed-css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bwca/typed-css/issues"
+  },
+  "homepage": "https://github.com/Bwca/typed-css#readme",
   "dependencies": {
     "sass": "^1.26.5"
   },

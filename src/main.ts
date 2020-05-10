@@ -10,7 +10,9 @@ export function createTypesForStylesheets(path = __dirname): void {
   try {
     stylesheetPaths = findFilesRecursivelyByExtension(path);
   } catch (e) {
-    NotificationService.error('Error while walking directories: could not fetch a list of stylesheet files!');
+    NotificationService.error(
+      `Error while walking directories: could not fetch a list of stylesheet files! Make sure the difectory exists: ${path}`
+    );
     return;
   }
 
