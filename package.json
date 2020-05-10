@@ -1,6 +1,6 @@
 {
   "name": "css-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Package for creating typings for stylesheet files.",
   "main": "main.js",
   "files": [
@@ -17,7 +17,10 @@
     "scss",
     "sass",
     "types",
-    "typescript"
+    "typescript",
+    "cli",
+    "front-end",
+    "web"
   ],
   "author": {
     "name": "Volodymyr Yepishev",
