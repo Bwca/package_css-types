@@ -1,4 +1,4 @@
-# Typed CSS
+# Css Types
 
 ## What is this package for
 
