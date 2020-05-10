@@ -36,7 +36,7 @@ npm run css-types -- src/css
 
 It creates a typescript a `*.style.ts` file containing enum with all style classes found in the stylesheet file as enum values `*.css` and `*.scss` file will receive.
 
-For example, provided you have a stylesheet `main.css` with the following contents:
+For example, provided you have a stylesheet `main.scss` with the following contents:
 
 ```
 // Hypothetical main.css file.
