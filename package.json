@@ -1,6 +1,6 @@
 {
   "name": "css-types",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Package for creating typings for stylesheet files.",
   "main": "main.js",
   "files": [
