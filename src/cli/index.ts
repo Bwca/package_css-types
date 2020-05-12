@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
 import { createTypesForStylesheets } from '../main';
+import { argsParser } from './args-parser/args-parser';
 
-const projectFolder = __dirname.replace('node_modules/css-types/dist', '');
+const projectFolder = __dirname.replace('node_modules/css-types/dist/cli', '');
 
-const folderToScan = projectFolder + (process.argv[2] || 'src');
+const { dir, isWatching } = argsParser(process.argv);
 
-createTypesForStylesheets(folderToScan);
+const path = projectFolder + (dir || 'src');
+
+createTypesForStylesheets(path, isWatching);
