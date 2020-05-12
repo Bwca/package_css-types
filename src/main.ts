@@ -1,8 +1,10 @@
+import { watchFile } from 'fs';
+
 import { createCssTypesForFile } from './create-css-types-for-file/create-css-types-for-file';
 import { findFilesRecursivelyByExtension } from './find-files-recursively-by-extension/find-files-recursively-by-extension';
 import { NotificationService } from './notification-service';
 
-export function createTypesForStylesheets(path = __dirname): void {
+export function createTypesForStylesheets(path = __dirname, isWatching = false): void {
   NotificationService.info('Attempting to create stylesheet type files...');
 
   let stylesheetPaths: string[];
@@ -22,5 +24,10 @@ export function createTypesForStylesheets(path = __dirname): void {
 
   stylesheetPaths.forEach((i) => createCssTypesForFile(i));
 
-  NotificationService.info('It is done.');
+  NotificationService.info('Finished creating enums');
+
+  if (isWatching) {
+    NotificationService.info('Watching files for changes');
+    stylesheetPaths.forEach((f) => watchFile(f, () => createCssTypesForFile(f)));
+  }
 }

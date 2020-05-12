@@ -11,7 +11,7 @@
     "lint": "tslint -c tslint.json  -p tsconfig.json",
     "test": "jest"
   },
-  "bin": "dist/cli.js",
+  "bin": "dist/cli",
   "keywords": [
     "css",
     "scss",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { createTypesForStylesheets } from './main';
+import { createTypesForStylesheets } from '../main';
 
 const projectFolder = __dirname.replace('node_modules/css-types/dist', '');
 
