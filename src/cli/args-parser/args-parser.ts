@@ -13,6 +13,6 @@ export function argsParser(args: string[]): Args {
 
   return {
     isWatching,
-    dir: dir,
+    dir,
   };
 }
