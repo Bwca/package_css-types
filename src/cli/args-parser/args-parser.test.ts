@@ -29,9 +29,9 @@ describe(`${argsParser.name} test`, () => {
     expect(result.isWatching).toBeFalsy();
   });
 
-  it('should recognize dirname', () => {
+  it('should recognize directory', () => {
     // Arrange
-    const args = ['/usr/bin/node', '/home/voka/Projects/test-typings/node_modules/.bin/css-types', 'dirname=some-dir'];
+    const args = ['/usr/bin/node', '/home/voka/Projects/test-typings/node_modules/.bin/css-types', '--directory=some-dir'];
 
     // Act
     const result = argsParser(args);

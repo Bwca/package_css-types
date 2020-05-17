@@ -26,10 +26,20 @@ Then run it:
 npm run css-types
 ```
 
+You can also set it to watch mode:
+
+```
+"scripts": {
+    "css-types": "css-types --watch"
+}
+```
+
 By default `css-types` looks for the `src` directory and walks it, creating typescript enums for every `*.css` and `*.scss` file it finds. To set a different directory for crawling simply pass its relative path:
 
 ```
-npm run css-types -- src/css
+"scripts": {
+    "css-types": "css-types --watch --directory=src/css"
+},
 ```
 
 ## What does it do
@@ -69,6 +79,6 @@ No need to worry about accidental renaming of css class that is used somewhere -
 
 ## Plans for future
 
-- add --watch flag for auto-updates of typings;
+- ~~add --watch flag for auto-updates of typings;~~ added in version 1.1.0.
 - add enumeration for IDs;
 - add support for LESS.

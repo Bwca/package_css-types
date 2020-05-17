@@ -1,6 +1,6 @@
 {
   "name": "css-types",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Package for creating typings for stylesheet files.",
   "main": "main.js",
   "files": [
@@ -11,7 +11,7 @@
     "lint": "tslint -c tslint.json  -p tsconfig.json",
     "test": "jest"
   },
-  "bin": "dist/cli",
+  "bin": "dist/cli/index.js",
   "keywords": [
     "css",
     "scss",

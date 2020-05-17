@@ -6,10 +6,10 @@ export function argsParser(args: string[]): Args {
   const isWatching = passedArgs.includes('--watch');
   passedArgs = passedArgs.filter((i) => !i.includes('--watch'));
 
-  const directoryPassed = passedArgs.find((i) => /^dirname=.*/.test(i));
-  passedArgs = passedArgs.filter((i) => !/^dirname=.*/.test(i));
+  const directoryPassed = passedArgs.find((i) => /^--directory=.*/.test(i));
+  passedArgs = passedArgs.filter((i) => !/^--directory=.*/.test(i));
 
-  const dir = directoryPassed ? directoryPassed.replace(/^dirname=/, '') : passedArgs[0];
+  const dir = directoryPassed ? directoryPassed.replace(/^--directory=/, '') : passedArgs[0];
 
   return {
     isWatching,
